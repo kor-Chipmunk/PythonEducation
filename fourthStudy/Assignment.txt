@@ -1,0 +1,92 @@
+@ OOO 인 부분도 채워보세요~
+
+1. 다음 실행결과를 보고 어떤 오류를 예외처리 해야 하는지 설명하고, 오류 6줄을 최대한 설명해 보시오.
+def my_power(y):
+    print("숫자를 입력하세요.")
+    x = input()
+    return int(x) ** y
+
+>> my_power(3)
+숫자를 입력하세요.
+abc
+Traceback (most recent call last):
+  File "<pyshell#21>", line 1, in <module>
+    my_power(3)
+  File "<pyshell#18>", line 4, in my_power
+    return int(x) ** y
+ValueError: invalid literal for int() with base 10: 'abc'
+
+2. ZeroDivisionError와 IndexError는 예외 정보를 담고 있는 OOO일 뿐입니다. 이들 예외형식의 인스턴스를 얻어낼 수 있는 방법을 예제 코드를 첨부하여 설명하시오.
+
+3. 예외 처리 구문에서 else와 finally의 차이점을 예제 소스를 첨부하여 설명하시오.
+
+4. ZeroDivisionError, IndexError 는 어느 예외와 같이 OOOOOOOOO 클래스를 상속하고 있다. 이 OOOOOOOOO 클래스를 제일 먼저 예외처리하면 어떤 문제가 생기는가?
+
+5. 사람이 오류를 일부러 만드려면, 어떤 키워드를 사용해야 하는가?
+
+6. 다음 소스 코드의 실행 결과를 설명하시오.
+def some_function():
+    print("1~10 사이의 수를 입력하세요:")
+    num = int(input())
+    if num < 1 or num > 10:
+        raise Exception("유효하지 않은 숫자입니다.: {0}".format(num))
+    else:
+        print("입력한 수는 {0}입니다.".format(num))
+
+def some_function_caller():
+    try:
+        some_function()
+    except Exception as err:
+        print("1) 예외가 발생했습니다. {0}".format(err))
+        raise
+
+def some_function_caller_caller():
+    try:
+        some_function_caller()
+    except Exception as err:
+        print("0) 예외가 발생했습니다. {0}".format(err))
+        raise
+
+try:
+    some_function_caller_caller()
+except Exception as err:
+    print("2) 예외가 발생했습니다. {0}".format(err))
+
+7. 아래 코드에서의 문제점은 부호 처리를 못한다는 문제점이 있다. 즉, 정수를 처리해야 하지만, -5 같은 음수를 처리하지 못한다. 문제점을 해결해 보시오.
+class InvalidIntException(Exception):
+    def __init__(self, arg):
+        super().__init__('정수가 아닙니다.: {0}'.format(arg))
+    
+def convert_to_integer(text):
+    if text.isdigit():          # 부호(+, -)처리 못함.
+        return int(text)
+    else:
+        raise InvalidIntException(text)
+
+if __name__ == '__main__':
+    try:
+        print("숫자를 입력하세요:")
+        text = input()
+        number = convert_to_integer(text)
+    except InvalidIntException as err:
+        print('예외가 발생했습니다. ({0})'.format(err))
+    else:
+        print('정수 형식으로 변환되었습니다 : {0} ({1})'.format(number, type(number)))
+
+8. 파일에 접근할 때, 열기만 하고, 닫지를 않으면 어떤 일이 발생하는가?
+
+9. 8번 문제를 해결하기 위해 파이썬에서 어떤 구문을 지원하는가? 그에 대한 예제 코드를 작성하시오.
+
+10. 9번 구문을 사용할 때, OOOO OOO를 제공해야 그 절에 올 수 있다. OOOO OOO 은 어떤 메소드를 구현해야 하는가?
+
+11. 10번의 OOOO OOO을 데코레이터로 수식하려면, 어떤 데코레이터를 써야하고, 그 함수의 구조를 설명하시오.
+
+12. 260P 첫번째 예제에서 errors 속성을 backslashreplace 으로 두면 어떤 결과가 나오고, 왜 그러는가?
+
+13. Little Endian 방식과 Big Endian 방식을 설명하고, 아래 코드를 Little Endian 과 Big Endian 방식으로 출력했을 때, 나오는 값은 무엇인가?
+packed = struct.pack('H', 0xFF15)
+for b in packed:
+    print(b)
+
+14. 2개의 문자열(각 크기는 8, 16), 3개의 실수형(2개의 float, 1개의 double), 1개의 정수형(unsigned long)을 가진 튜플을 이진 파일에 기록하고, 다시 불러오는 소스를 만들어 보시오.
+튜플 내용은 아무거나 상관 없습니다.
