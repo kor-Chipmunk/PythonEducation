@@ -40,3 +40,10 @@
 
 ### 기타 주제
 건의해주시면, 적절한 이수학점과 함께 이 문서에 올려드립니다.
+
+## 참고 자료
+API 문서를 눈 씻고 찾아봐도 객체들에 대한 정보는 없는 것 같네요. 다른 분이 분석하신 객체 링크 올려드립니다.
+1. [Status Object Structure](http://tkang.blogspot.kr/2011/01/tweepy-twitter-api-status-object.html)
+2. [User Object Structure](http://tkang.blogspot.kr/2011/01/tweepytwitter-api-user-object-structure.html)
+Direct Message 객체와 관련된 정보는 제가 추후 올려드리겠습니다.
+아마 직접, JSON 라이브러리를 써서 찾아야 하거나 (귀찮게)파이썬 라이브러리 소스를 좀 봐야할지도...
